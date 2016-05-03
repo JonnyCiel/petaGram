@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">petaGram</string>
+    <string name="action_settings">Settings</string>
+    <string name="imagen_del_perro">Imagen del perro</string>
+    <string name="nombre_mascota">Catty</string>
+    <string name="favoritos">Favoritos</string>
+</resources>
