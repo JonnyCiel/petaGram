@@ -2,7 +2,6 @@ package co.com.jonny.petagram;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -71,7 +70,8 @@ public class MainActivity extends AppCompatActivity implements Adaptador_Mascota
                 startActivity(intent2);
                 break;
             case R.id.acerca_menu:
-                Snackbar.make(findViewById(android.R.id.content), "Acerca de", Snackbar.LENGTH_SHORT).show();
+                Intent intent3 = new Intent(this, AcercaActividad.class);
+                startActivity(intent3);
                 break;
         }
 

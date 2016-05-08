@@ -22,9 +22,11 @@
             android:name=".Favoritas"
             android:parentActivityName=".MainActivity">
         </activity>
-        <activity android:name=".ContactoActividad">
+        <activity android:name=".ContactoActividad"
+            android:parentActivityName=".MainActivity">
         </activity>
-        <activity android:name=".AcercaActividad">
+        <activity android:name=".AcercaActividad"
+            android:parentActivityName=".MainActivity">
         </activity>
     </application>
 
