@@ -4,4 +4,7 @@
     <string name="imagen_del_perro">Imagen del perro</string>
     <string name="nombre_mascota">Catty</string>
     <string name="favoritos">Favoritos</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
