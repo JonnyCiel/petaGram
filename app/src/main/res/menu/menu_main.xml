@@ -8,4 +8,12 @@
           android:icon="@drawable/star"
           app:showAsAction="ifRoom|collapseActionView"
           />
+
+    <item android:id="@+id/contacto_menu"
+          android:title="Contacto"
+          app:showAsAction="never"/>
+
+    <item android:id="@+id/acerca_menu"
+          android:title="Acerca de"
+          app:showAsAction="never"/>
 </menu>

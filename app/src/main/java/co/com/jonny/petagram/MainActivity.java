@@ -2,6 +2,7 @@ package co.com.jonny.petagram;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -51,14 +52,27 @@ public class MainActivity extends AppCompatActivity implements Adaptador_Mascota
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.favoritos_menu) {
-            Intent intent = new Intent(this, Favoritas.class);
-            startActivity(intent);
-
-            return true;
+//        int id = item.getItemId();
+//
+//        //noinspection SimplifiableIfStatement
+//        if (id == R.id.favoritos_menu) {
+//            Intent intent = new Intent(this, Favoritas.class);
+//            startActivity(intent);
+//
+//            return true;
+//        }
+        switch (item.getItemId()){
+            case R.id.favoritos_menu:
+                Intent intent = new Intent(this, Favoritas.class);
+                startActivity(intent);
+                break;
+            case R.id.contacto_menu:
+                Intent intent2 = new Intent(this, ContactoActividad.class);
+                startActivity(intent2);
+                break;
+            case R.id.acerca_menu:
+                Snackbar.make(findViewById(android.R.id.content), "Acerca de", Snackbar.LENGTH_SHORT).show();
+                break;
         }
 
         return super.onOptionsItemSelected(item);

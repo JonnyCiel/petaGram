@@ -18,8 +18,13 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".Favoritas"
+        <activity
+            android:name=".Favoritas"
             android:parentActivityName=".MainActivity">
+        </activity>
+        <activity android:name=".ContactoActividad">
+        </activity>
+        <activity android:name=".AcercaActividad">
         </activity>
     </application>
 
