@@ -16,6 +16,11 @@ public class Mascota {
         Imagen = imagen;
         Raiting = raiting;
     }
+
+    public Mascota(Drawable imagen, int raiting) {
+        Imagen = imagen;
+        Raiting = raiting;
+    }
     public int incRating(){
         this.Raiting++;
         return this.Raiting;

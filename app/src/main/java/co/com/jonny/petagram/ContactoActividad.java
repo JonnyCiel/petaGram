@@ -51,28 +51,48 @@ public class ContactoActividad extends AppCompatActivity implements View.OnClick
     @Override
     public void onClick(View v) {
 
-        NombreMail = Nombre.getText().toString();
-        EmailMail = Email.getText().toString();
-        MensajeMail = Mensaje.getText().toString();
+        if(Nombre.getText().toString().isEmpty()){
+            Nombre.setError("No dejes campos en blanco");
+        }else{
+            NombreMail = Nombre.getText().toString();
+        }
 
-        Properties properties = new Properties();
-        properties.put("mail.smtp.host", "smtp.gmail.com");
-        properties.put("mail.smtp.socketFactory.port", "465");
-        properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-        properties.put("mail.smtp.auth", "true");
-        properties.put("mail.smtp.port", "465");
+        if (Email.getText().toString().isEmpty()){
+            Email.setError("No dejes campos en blanco");
+        }else {
+            EmailMail = Email.getText().toString();
+        }
 
-        mSession = Session.getDefaultInstance(properties, new Authenticator() {
-            @Override
-            protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("pruebacourseramail@gmail.com", "cursolocovideo123");
-            }
-        });
+        if (Mensaje.getText().toString().isEmpty()){
+            Mensaje.setError("No dejes campos en blanco");
+        }else {
+            MensajeMail = Mensaje.getText().toString();
+        }
 
-        mProgressDialog = ProgressDialog.show(ContactoActividad.this, "Estado", "Enviando mensaje...", true);
+        if (Nombre.getText().toString().isEmpty() || Email.getText().toString().isEmpty() || Mensaje.getText().toString().isEmpty()){
 
-        RecibirRespuesta respuesta = new RecibirRespuesta();
-        respuesta.execute();
+        }else {
+            Properties properties = new Properties();
+            properties.put("mail.smtp.host", "smtp.gmail.com");
+            properties.put("mail.smtp.socketFactory.port", "465");
+            properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+            properties.put("mail.smtp.auth", "true");
+            properties.put("mail.smtp.port", "465");
+
+            mSession = Session.getDefaultInstance(properties, new Authenticator() {
+                @Override
+                protected PasswordAuthentication getPasswordAuthentication() {
+                    return new PasswordAuthentication("pruebacourseramail@gmail.com", "cursolocovideo123");
+                }
+            });
+
+            mProgressDialog = ProgressDialog.show(ContactoActividad.this, "Estado", "Enviando mensaje...", true);
+
+            RecibirRespuesta respuesta = new RecibirRespuesta();
+            respuesta.execute();
+        }
+
+
     }
 
     class RecibirRespuesta extends AsyncTask<String, Void, String> {

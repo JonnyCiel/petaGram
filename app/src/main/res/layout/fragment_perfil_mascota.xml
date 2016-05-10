@@ -1,13 +1,49 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
+                android:layout_margin="10dp"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
              tools:context="co.com.jonny.petagram.PerfilMascotaFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/perro"
+        android:id="@+id/perfil_perro"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        app:civ_border_color="#EEEEEE"
+        app:civ_border_width="4dp"
+        app:civ_shadow="true"
+        app:civ_shadow_radius="10"
+        app:civ_shadow_color="#8BC34A"/>
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment"/>
+        android:text="Cielo"
+        android:id="@+id/nombre_perro_perfil"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/perfil_perro"
+        android:gravity="center"
+        android:layout_height="wrap_content"/>
 
-</FrameLayout>
+    <View
+        android:id="@+id/rayita"
+        android:layout_below="@+id/nombre_perro_perfil"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/darker_gray"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/rayita"
+        android:id="@+id/RecyclerView_PerfilMascota"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>
