@@ -1,6 +1,9 @@
 package co.com.jonny.petagram;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,7 +49,7 @@ public class Adaptador_Mascotas extends RecyclerView.Adapter<Adaptador_Mascotas.
 
         final Mascota actual = mMascotas.get(position);
 
-        holder.imagenPerro.setImageDrawable(actual.getImagen());
+        holder.imagenPerro.setImageResource(actual.getImagen());
 
         holder.huesoRaiting.setImageDrawable(mContext.getResources().getDrawable(R.drawable.hueso_blanco));
 
@@ -54,6 +57,23 @@ public class Adaptador_Mascotas extends RecyclerView.Adapter<Adaptador_Mascotas.
             @Override
             public void onClick(View v) {
                 holder.raitingPerro.setText(""+ actual.incRating());
+                ContentValues values = new ContentValues();
+                values.put(BaseDatos.FAVORITOS_NOMBRE, actual.getNombre());
+                values.put(BaseDatos.FAVORITOS_IMAGEN, actual.getImagen());
+                values.put(BaseDatos.FAVORITOS_RAITING, actual.getRaiting());
+
+                BaseDatos db = new BaseDatos(mContext);
+                db.AgregarFavorito(values);
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(mContext)
+                        .setMessage("Gracias por tu like, este contacto aparecerá en tus favoritos")
+                        .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                builder.show();
             }
         });
 

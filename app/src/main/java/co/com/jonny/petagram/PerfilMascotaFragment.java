@@ -32,18 +32,18 @@ public class PerfilMascotaFragment extends Fragment implements Adaptador_Mascota
 
         mRecyclerView = (RecyclerView) v.findViewById(R.id.RecyclerView_PerfilMascota);
 
-        mMascotas.add(new Mascota(getResources().getDrawable(R.drawable.perro), 5));
-        mMascotas.add(new Mascota(getResources().getDrawable(R.drawable.perro), 8));
-        mMascotas.add(new Mascota(getResources().getDrawable(R.drawable.perro), 15));
-        mMascotas.add(new Mascota(getResources().getDrawable(R.drawable.perro), 20));
-        mMascotas.add(new Mascota(getResources().getDrawable(R.drawable.perro), 3));
-        mMascotas.add(new Mascota(getResources().getDrawable(R.drawable.perro), 11));
-        mMascotas.add(new Mascota(getResources().getDrawable(R.drawable.perro), 0));
-        mMascotas.add(new Mascota(getResources().getDrawable(R.drawable.perro), 69));
-        mMascotas.add(new Mascota(getResources().getDrawable(R.drawable.perro), 7));
-        mMascotas.add(new Mascota(getResources().getDrawable(R.drawable.perro), 24));
-        mMascotas.add(new Mascota(getResources().getDrawable(R.drawable.perro), 30));
-        mMascotas.add(new Mascota(getResources().getDrawable(R.drawable.perro), 10));
+        mMascotas.add(new Mascota(R.drawable.perro, 5));
+        mMascotas.add(new Mascota(R.drawable.perro, 8));
+        mMascotas.add(new Mascota(R.drawable.perro, 15));
+        mMascotas.add(new Mascota(R.drawable.perro, 20));
+        mMascotas.add(new Mascota(R.drawable.perro, 3));
+        mMascotas.add(new Mascota(R.drawable.perro, 11));
+        mMascotas.add(new Mascota(R.drawable.perro, 0));
+        mMascotas.add(new Mascota(R.drawable.perro, 69));
+        mMascotas.add(new Mascota(R.drawable.perro, 7));
+        mMascotas.add(new Mascota(R.drawable.perro, 24));
+        mMascotas.add(new Mascota(R.drawable.perro, 30));
+        mMascotas.add(new Mascota(R.drawable.perro, 10));
 
         RecyclerView.LayoutManager manager = new GridLayoutManager(getActivity(), 3);
         Adaptador_MascotasPerfil mascotasPerfil = new Adaptador_MascotasPerfil(mMascotas, getActivity(), this);

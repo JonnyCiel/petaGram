@@ -37,11 +37,11 @@ public class MascotasPrincipalesFragment extends Fragment implements Adaptador_M
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         Adaptador_Mascotas mascotas = new Adaptador_Mascotas(mMascotas, getActivity(), this);
 
-        mMascotas.add(new Mascota("Leo", getResources().getDrawable(R.drawable.perro), 5));
-        mMascotas.add(new Mascota("Negrita", getResources().getDrawable(R.drawable.perro), 7));
-        mMascotas.add(new Mascota("Princesa", getResources().getDrawable(R.drawable.perro), 7));
-        mMascotas.add(new Mascota("Mono", getResources().getDrawable(R.drawable.perro), 20));
-        mMascotas.add(new Mascota("Huesos", getResources().getDrawable(R.drawable.perro), 0));
+        mMascotas.add(new Mascota("Leo", R.drawable.perro, 5));
+        mMascotas.add(new Mascota("Negrita", R.drawable.perro, 7));
+        mMascotas.add(new Mascota("Princesa", R.drawable.perro, 7));
+        mMascotas.add(new Mascota("Mono", R.drawable.perro, 20));
+        mMascotas.add(new Mascota("Huesos", R.drawable.perro, 0));
 
         mRecyclerView.setAdapter(mascotas);
         return v;
