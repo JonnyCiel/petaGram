@@ -1,8 +1,10 @@
-package co.com.jonny.petagram;
+package co.com.jonny.petagram.vistas;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+
+import co.com.jonny.petagram.R;
 
 public class AcercaActividad extends AppCompatActivity {
 

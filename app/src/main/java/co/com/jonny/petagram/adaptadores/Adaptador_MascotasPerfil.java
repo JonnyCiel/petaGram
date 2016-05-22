@@ -1,4 +1,4 @@
-package co.com.jonny.petagram;
+package co.com.jonny.petagram.adaptadores;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +9,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+
+import co.com.jonny.petagram.modelos.Mascota;
+import co.com.jonny.petagram.R;
 
 /**
  * Created by Jonny on 02/05/2016.
@@ -29,7 +32,7 @@ public class Adaptador_MascotasPerfil extends RecyclerView.Adapter<Adaptador_Mas
     }
 
 
-    interface myOnclick{
+    public interface myOnclick{
         public void onClick(myViewHolder holder, int idMascota);
     }
 

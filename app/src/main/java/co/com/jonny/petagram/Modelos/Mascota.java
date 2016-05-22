@@ -1,4 +1,4 @@
-package co.com.jonny.petagram;
+package co.com.jonny.petagram.modelos;
 
 /**
  * Created by Jonny on 02/05/2016.

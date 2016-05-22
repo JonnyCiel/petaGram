@@ -1,4 +1,4 @@
-package co.com.jonny.petagram;
+package co.com.jonny.petagram.vistas;
 
 
 import android.os.Bundle;
@@ -10,6 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
+
+import co.com.jonny.petagram.modelos.Mascota;
+import co.com.jonny.petagram.R;
+import co.com.jonny.petagram.adaptadores.Adaptador_MascotasPerfil;
 
 
 /**

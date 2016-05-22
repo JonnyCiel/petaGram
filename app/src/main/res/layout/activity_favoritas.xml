@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="co.com.jonny.petagram.Favoritas">
+    tools:context=".vistas.Favoritas">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/abbBarLa"
@@ -57,7 +57,7 @@
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:context="co.com.jonny.petagram.MainActivity"
+        tools:context=".vistas.MainActivity"
         tools:showIn="@layout/activity_main">
 
     </android.support.v7.widget.RecyclerView>

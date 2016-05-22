@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".vistas.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -20,14 +20,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Favoritas"
-            android:parentActivityName=".MainActivity">
+            android:name=".vistas.Favoritas"
+            android:parentActivityName=".vistas.MainActivity">
         </activity>
-        <activity android:name=".ContactoActividad"
-            android:parentActivityName=".MainActivity">
+        <activity android:name=".vistas.ContactoActividad"
+            android:parentActivityName=".vistas.MainActivity">
         </activity>
-        <activity android:name=".AcercaActividad"
-            android:parentActivityName=".MainActivity">
+        <activity android:name=".vistas.AcercaActividad"
+            android:parentActivityName=".vistas.MainActivity">
         </activity>
     </application>
 

@@ -1,4 +1,4 @@
-package co.com.jonny.petagram;
+package co.com.jonny.petagram.modelos;
 
 import android.content.ContentValues;
 import android.content.Context;

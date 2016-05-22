@@ -1,4 +1,4 @@
-package co.com.jonny.petagram;
+package co.com.jonny.petagram.vistas;
 
 
 import android.app.ProgressDialog;
@@ -22,6 +22,8 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+
+import co.com.jonny.petagram.R;
 
 public class ContactoActividad extends AppCompatActivity implements View.OnClickListener{
 

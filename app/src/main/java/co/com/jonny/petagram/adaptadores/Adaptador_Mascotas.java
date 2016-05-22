@@ -1,5 +1,6 @@
-package co.com.jonny.petagram;
+package co.com.jonny.petagram.adaptadores;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
@@ -12,10 +13,14 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import co.com.jonny.petagram.modelos.BaseDatos;
+import co.com.jonny.petagram.modelos.Mascota;
+import co.com.jonny.petagram.R;
+
 /**
  * Created by Jonny on 02/05/2016.
  */
-public class Adaptador_Mascotas_Favoritas extends RecyclerView.Adapter<Adaptador_Mascotas_Favoritas.myViewHolder>  {
+public class Adaptador_Mascotas extends RecyclerView.Adapter<Adaptador_Mascotas.myViewHolder>  {
 
     private ArrayList<Mascota> mMascotas = new ArrayList<Mascota>();
     private Context mContext;
@@ -24,14 +29,14 @@ public class Adaptador_Mascotas_Favoritas extends RecyclerView.Adapter<Adaptador
 
 
 
-    public Adaptador_Mascotas_Favoritas(ArrayList<Mascota> mascotas, Context context, myOnclick myOnclick) {
+    public Adaptador_Mascotas(ArrayList<Mascota> mascotas, Context context, myOnclick myOnclick) {
         mMascotas = mascotas;
         mContext = context;
         mMyOnclick = myOnclick;
     }
 
 
-    interface myOnclick{
+    public interface myOnclick{
         public void onClick(myViewHolder holder, int idMascota);
     }
 
@@ -55,9 +60,17 @@ public class Adaptador_Mascotas_Favoritas extends RecyclerView.Adapter<Adaptador
         holder.huesoRaiting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                holder.raitingPerro.setText(""+ actual.incRating());
+                ContentValues values = new ContentValues();
+                values.put(BaseDatos.FAVORITOS_NOMBRE, actual.getNombre());
+                values.put(BaseDatos.FAVORITOS_IMAGEN, actual.getImagen());
+                values.put(BaseDatos.FAVORITOS_RAITING, actual.getRaiting());
+
+                BaseDatos db = new BaseDatos(mContext);
+                db.AgregarFavorito(values);
+
                 AlertDialog.Builder builder = new AlertDialog.Builder(mContext)
-                        .setTitle("Ya es favorita")
-                        .setMessage("Ya has indicado que esta mascota es favorita")
+                        .setMessage("Gracias por tu like, este contacto aparecerá en tus favoritos")
                         .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {

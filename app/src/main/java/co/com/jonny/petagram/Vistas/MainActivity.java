@@ -1,4 +1,4 @@
-package co.com.jonny.petagram;
+package co.com.jonny.petagram.vistas;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import java.util.ArrayList;
+
+import co.com.jonny.petagram.R;
+import co.com.jonny.petagram.adaptadores.PageAdapter;
 
 public class MainActivity extends AppCompatActivity {
 

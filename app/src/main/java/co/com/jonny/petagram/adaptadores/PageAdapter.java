@@ -1,4 +1,4 @@
-package co.com.jonny.petagram;
+package co.com.jonny.petagram.adaptadores;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

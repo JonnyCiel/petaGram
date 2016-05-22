@@ -1,4 +1,4 @@
-package co.com.jonny.petagram;
+package co.com.jonny.petagram.vistas;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,6 +7,11 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
 import java.util.ArrayList;
+
+import co.com.jonny.petagram.modelos.BaseDatos;
+import co.com.jonny.petagram.modelos.Mascota;
+import co.com.jonny.petagram.R;
+import co.com.jonny.petagram.adaptadores.Adaptador_Mascotas_Favoritas;
 
 public class Favoritas extends AppCompatActivity implements Adaptador_Mascotas_Favoritas.myOnclick{
 
