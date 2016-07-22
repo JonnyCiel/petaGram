@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
+import com.mikhaellopez.circularimageview.CircularImageView;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -46,19 +48,10 @@ public class PerfilMascotaFragment extends Fragment implements Adaptador_Mascota
         View v = inflater.inflate(R.layout.fragment_perfil_mascota, container, false);
 
         mRecyclerView = (RecyclerView) v.findViewById(R.id.RecyclerView_PerfilMascota);
-
-//        mMascotas.add(new Mascota(R.drawable.perro, 5));
-//        mMascotas.add(new Mascota(R.drawable.perro, 8));
-//        mMascotas.add(new Mascota(R.drawable.perro, 15));
-//        mMascotas.add(new Mascota(R.drawable.perro, 20));
-//        mMascotas.add(new Mascota(R.drawable.perro, 3));
-//        mMascotas.add(new Mascota(R.drawable.perro, 11));
-//        mMascotas.add(new Mascota(R.drawable.perro, 0));
-//        mMascotas.add(new Mascota(R.drawable.perro, 69));
-//        mMascotas.add(new Mascota(R.drawable.perro, 7));
-//        mMascotas.add(new Mascota(R.drawable.perro, 24));
-//        mMascotas.add(new Mascota(R.drawable.perro, 30));
-//        mMascotas.add(new Mascota(R.drawable.perro, 10));
+        CircularImageView perfil = (CircularImageView) v.findViewById(R.id.perfil_perro);
+        Picasso.with(getActivity())
+                .load("https://igcdn-photos-a-a.akamaihd.net/hphotos-ak-xpl1/t51.2885-19/s150x150/13671889_1805413829692072_485301905_a.jpg")
+                .into(perfil);
 
         obtenerMascotasRecientes();
 

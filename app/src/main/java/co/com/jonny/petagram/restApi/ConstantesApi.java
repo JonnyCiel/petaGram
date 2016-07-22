@@ -9,5 +9,9 @@ public final class ConstantesApi {
     public final static String KEY_ACESS_TOKEN = "?access_token=";
     public static final String KEY_GET_RECENT_USER_MEDIA = "users/self/media/recent/";
     public static final String URL_GET_RECENT_USER_MEDIA = KEY_GET_RECENT_USER_MEDIA + KEY_ACESS_TOKEN + ACCESSTOKEN;
+    public static final String KEY_GET_SEARCH_USER = "users/search?q=jonnyciel";
+    public static final String KEY_ACESS_TOKEN_SEARCH = "&access_token=";
+    public static final String URL_GET_SEARCH_USER = KEY_GET_SEARCH_USER + KEY_ACESS_TOKEN_SEARCH + ACCESSTOKEN;
+
 
 }

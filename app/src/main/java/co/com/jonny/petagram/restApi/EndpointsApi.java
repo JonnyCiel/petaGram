@@ -10,4 +10,7 @@ public interface EndpointsApi {
 
     @GET(ConstantesApi.URL_GET_RECENT_USER_MEDIA)
     Call<ContactoResponse> getRecentMedia();
+
+    @GET(ConstantesApi.URL_GET_SEARCH_USER)
+    Call<ContactoResponse> getSearchUser();
 }
