@@ -8,24 +8,26 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
-import co.com.jonny.petagram.modelos.Mascota;
 import co.com.jonny.petagram.R;
+import co.com.jonny.petagram.modelos.MascotaJson;
 
 /**
  * Created by Jonny on 02/05/2016.
  */
 public class Adaptador_MascotasPerfil extends RecyclerView.Adapter<Adaptador_MascotasPerfil.myViewHolder>  {
 
-    private ArrayList<Mascota> mMascotas = new ArrayList<Mascota>();
+    private ArrayList<MascotaJson> mMascotas = new ArrayList<MascotaJson>();
     private Context mContext;
     private myOnclick mMyOnclick;
 
 
 
 
-    public Adaptador_MascotasPerfil(ArrayList<Mascota> mascotas, Context context, myOnclick myOnclick) {
+    public Adaptador_MascotasPerfil(ArrayList<MascotaJson> mascotas, Context context, myOnclick myOnclick) {
         mMascotas = mascotas;
         mContext = context;
         mMyOnclick = myOnclick;
@@ -47,13 +49,13 @@ public class Adaptador_MascotasPerfil extends RecyclerView.Adapter<Adaptador_Mas
     @Override
     public void onBindViewHolder(final myViewHolder holder, int position) {
 
-        final Mascota actual = mMascotas.get(position);
+        final MascotaJson actual = mMascotas.get(position);
 
-        holder.imagenPerro.setImageResource(actual.getImagen());
+        Picasso.with(mContext)
+                .load(actual.getUrlImagen())
+                .into(holder.imagenPerro);
 
-        String raiting = Integer.toString(actual.getRaiting());
-
-        holder.raitingPerro.setText(raiting);
+        holder.raitingPerro.setText(String.valueOf(actual.getRaiting()));
 
     }
 
@@ -84,6 +86,5 @@ public class Adaptador_MascotasPerfil extends RecyclerView.Adapter<Adaptador_Mas
             notifyDataSetChanged();
         }
     }
-
 
 }
