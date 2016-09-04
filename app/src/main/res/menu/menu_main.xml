@@ -20,4 +20,8 @@
     <item android:id="@+id/configurarCuenta"
           android:title="Configurar Cuenta"
           app:showAsAction="never"/>
+
+    <item android:id="@+id/recibirNotificación"
+          android:title="Recibir notificación"
+          app:showAsAction="never"/>
 </menu>
